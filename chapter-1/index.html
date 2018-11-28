@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<script type="text/javascript" src="../node_modules/vue/dist/vue.min.js"></script>
+<link rel="stylesheet" href="main.css">
+</head>
+
+<div id="app">
+    <p>{{ message }}</p>
+    <input v-model="message">
+    <button v-on:click='handleClick'>Click</button>
+    <button v-on:click="show=!show">切り替え</button>
+    <transition>
+        <p v-if="show">Hello vue.js</p>
+    </transition>
+
+</div>
+
+<script src="main.js"></script>
+
+</html>
