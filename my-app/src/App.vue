@@ -14,6 +14,15 @@ export default {
     HelloWorld
   }
 }
+
+export default {
+  created() {
+    // get status of store
+    console.log(this.$store.state.count)
+    // update status of store
+    this.$store.commit('increment')
+  },
+}
 </script>
 
 <style>
