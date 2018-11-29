@@ -2,4 +2,6 @@
 Personal portfolio by vue.js
 
 ## install vue.js
+```
 $ npm install vue@csp
+```
