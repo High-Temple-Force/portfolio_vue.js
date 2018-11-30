@@ -1,37 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h1>{{ message }}</h1>
+    <EditForm />
   </div>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import store from 'store.js'
+  import EditForm from './components/EditForm.vue'
+  export default {
+    name: 'app',
+    commponents: {
+      EditForm
+    },
+    computed: {
+      // sync local message and store message
+      message() {
+        return this.$store.getters.message
+      }
+    }
   }
-}
-
-export default {
-  created() {
-    // get status of store
-    console.log(this.$store.state.count)
-    // update status of store
-    this.$store.commit('increment')
-  },
-}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
