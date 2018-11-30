@@ -1,6 +1,7 @@
 <template>
   <div>
     <myheader></myheader>
+    <test></test>
     <p v-if="msg.length > 0">
       {{msg}}
     </p>
@@ -13,10 +14,12 @@
 </template>
 
 <script>
+  import test from './components/test'
   import myheader from './components/myheader'
   export default {
     components: {
-      myheader
+      myheader,
+      test
     },
     data () {
       return {
@@ -30,7 +33,8 @@
     },
     created() {
       const that = this
-      $.getJSON('http://www.geonames.org/postalCodeLookupJSON?postalcode=10504&country=US&callback=?', {}, function (json) {
+      $.getJSON('http://www.geonames.org/postalCodeLookupJSON?postalcode=10504&country=US&callback=?',
+       {}, function (json) {
       console.log(json)
       that.msg = json.postalcodes[0].adminName1
     })
