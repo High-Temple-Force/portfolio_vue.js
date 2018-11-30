@@ -1,17 +1,17 @@
 # portfolio_vue.js
 Personal portfolio by vue.js
 
-## install vue-cli
+## 1. install vue-cli
 ```
 $ npm install -g vue-cli
 ```  
 
-## install Vuex and Babel-polyfill
+## 2. install Vuex and Babel-polyfill
 ```
 $ npm install vuex babel-polyfill
 ```  
 
-## make store.js at /src/
+## 3. make store.js at /src/
 ```
 import 'babel-polyfill'
 import Vue from 'vue'
