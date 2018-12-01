@@ -1,6 +1,6 @@
 
-# Portfolio_vue.js
-#### Personal portfolio by vue.js
+# Practice_vue.js
+#### Personal practice by vue.js
 <br>
 
 ## How to get start
