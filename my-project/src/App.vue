@@ -1,7 +1,6 @@
 <template>
   <div>
     <myheader></myheader>
-    <test></test>
     <p v-if="msg.length > 0">
       {{msg}}
     </p>
@@ -9,17 +8,21 @@
       no text
     </p>
     <input type="text" v-model="msg">
+      no text
     <button @click="clear()">clear</button>
+    <a href="https://vuejs.org" target="_blank"
+    class="btn btn-primary">Core Docs
+    </a>
   </div>
+
+  
 </template>
 
 <script>
-  import test from './components/test'
   import myheader from './components/myheader'
   export default {
     components: {
       myheader,
-      test
     },
     data () {
       return {
@@ -32,11 +35,10 @@
       }
     },
     created() {
-      const that = this
       $.getJSON('http://www.geonames.org/postalCodeLookupJSON?postalcode=10504&country=US&callback=?',
-       {}, function (json) {
+       function (json) {
       console.log(json)
-      that.msg = json.postalcodes[0].adminName1
+      this.msg = json.postalcodes[0].adminName1
     })
   }
 }
